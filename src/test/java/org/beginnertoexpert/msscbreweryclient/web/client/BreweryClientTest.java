@@ -42,4 +42,9 @@ class BreweryClientTest {
         client.updateBeer(uuid,beerDto);
 
     }
+    @Test
+    void deleteBeer() {
+        UUID uuid = UUID.randomUUID();
+        client.deleteBeer(uuid);
+    }
 }
