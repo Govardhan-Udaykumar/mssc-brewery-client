@@ -11,10 +11,10 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class BreweryClientTest {
+class BeerClientTest {
 
     @Autowired
-    BreweryClient client;
+    BeerClient client;
     @Test
     void getBeerById() {
         BeerDto beerDto = client.getBeerById(UUID.randomUUID());

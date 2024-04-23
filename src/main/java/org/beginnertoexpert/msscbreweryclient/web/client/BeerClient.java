@@ -11,7 +11,7 @@ import java.util.UUID;
 
 
 @Component
-public class BreweryClient {
+public class BeerClient {
 
     private final String BEER_PATH_V1 ="/api/v1/beer";
 
@@ -20,7 +20,7 @@ public class BreweryClient {
     private final RestTemplate restTemplate;
 
 
-    public BreweryClient(BreweryConfig breweryConfig, RestTemplateBuilder restTemplateBuilder) {
+    public BeerClient(BreweryConfig breweryConfig, RestTemplateBuilder restTemplateBuilder) {
         this.breweryConfig = breweryConfig;
         this.restTemplate = restTemplateBuilder.build();
     }
