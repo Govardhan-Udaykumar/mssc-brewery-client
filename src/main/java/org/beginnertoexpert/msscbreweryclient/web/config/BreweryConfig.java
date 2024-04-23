@@ -1,5 +1,7 @@
 package org.beginnertoexpert.msscbreweryclient.web.config;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,13 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BreweryConfig {
 
+    @Getter
+    @Setter
     private String apiHost;
 
-    public String getApiHost() {
-        return apiHost;
-    }
-
-    public void setApiHost(String apiHost) {
-        this.apiHost = apiHost;
-    }
 }

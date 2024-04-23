@@ -1,9 +1,7 @@
 package org.beginnertoexpert.msscbreweryclient.web.client;
 
-import lombok.Setter;
 import org.beginnertoexpert.msscbreweryclient.web.config.BreweryConfig;
 import org.beginnertoexpert.msscbreweryclient.web.model.BeerDto;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -28,6 +26,6 @@ public class BreweryClient {
 
     public BeerDto getBeerById(UUID id){
 
-        return restTemplate.getForObject(breweryConfig.getApiHost().toString()+BEER_PATH_V1+id.toString(),BeerDto.class);
+        return restTemplate.getForObject(breweryConfig.getApiHost()+BEER_PATH_V1+id.toString(),BeerDto.class);
     }
 }
