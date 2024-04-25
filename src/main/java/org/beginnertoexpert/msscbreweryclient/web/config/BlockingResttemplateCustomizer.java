@@ -13,6 +13,8 @@ import org.apache.hc.client5.http.impl.classic.HttpClients;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.beginnertoexpert.msscbreweryclient.web.constants.ClientConstants.*;
+
 @Component
 public class BlockingResttemplateCustomizer implements RestTemplateCustomizer {
     @Override
@@ -22,12 +24,12 @@ public class BlockingResttemplateCustomizer implements RestTemplateCustomizer {
 
     private ClientHttpRequestFactory clientHttpRequestFactory() {
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
-        connectionManager.setMaxTotal(200);
-        connectionManager.setDefaultMaxPerRoute(20);
+        connectionManager.setMaxTotal(MAX_TOTAL_CONNECTIONS);
+        connectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_PER_ROUTE);
 
         RequestConfig requestConfig = RequestConfig.custom()
-                .setConnectionRequestTimeout(3000, TimeUnit.MILLISECONDS)
-                .setResponseTimeout(3000,TimeUnit.MILLISECONDS)
+                .setConnectionRequestTimeout(CONNECTION_REQUEST_TIMEOUT, TimeUnit.MILLISECONDS)
+                .setResponseTimeout(RESPONSE_TIMEOUT,TimeUnit.MILLISECONDS)
                 .build();
 
 
